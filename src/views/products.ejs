@@ -1,0 +1,35 @@
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+             <%   products.forEach(product=>{ %>
+
+                    <tr>
+                        <th> <%= product.id %> </th>
+                        <td> <%= product.name %> </td>
+                        <td> <%= product.desc %>  </td>
+                        <td scope="col"> <%= product.price %> </td>
+                        <td>
+                            <img src= "<%= product.imageurl %>"  />
+                            <!-- <img src= "../../public/images/1716487600589-Screenshot (60).png"  /> -->
+                        </td>
+                        <td>
+                             <a name="update-product" id="update-product" class="btn btn-primary" href="/update-product/<%= product.id %>" role="button">Update </a> 
+                             <!-- <a name="delete-product" id="delete-product" class="btn btn-danger" href="/delete-product/<%= product.id %>" role="button">Delete </a>  -->
+                             <button type="button" class="btn btn-danger" onclick="deleteProduct('<%= product.id %>')">Delete </button>
+                        </td>
+                    </tr>
+             <%   }) %>
+        
+            </tbody>
+        </table>
+   

@@ -1,0 +1,23 @@
+<h2 class="center mb-4">Registration Page </h2>
+<form action="/register" method="post">
+  <% if(errorMessage){ %>
+    <div class="alert alert-primary" role="alert">
+        <strong> <%= errorMessage %></strong><br>
+    </div>
+ <% } %>
+    <div class="form-group">
+      <label for="name">Name </label>
+      <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="Enter your name " value="king">
+      <small id="helpId" class="form-text text-muted">Please enter valid name </small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email </label>
+      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Enter your Email" value="king@gmail.com">
+      <small id="emailHelpId" class="form-text text-muted">Enter valid Emali </small>
+    </div>
+    <div class="form-group">
+      <label for="password">Password </label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password " value="kdjflamldflkafdka">
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Submit </button>
+</form>
